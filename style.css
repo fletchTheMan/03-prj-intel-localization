@@ -54,7 +54,7 @@ section {
 /* Style each card inside the section */
 section > div {
   /* Set card height to 25% of the viewport height */
-  height: 25vh;
+  height: 30vh;
   /* Add space between cards */
   margin-right: 24px;
   /* Add a border and background color */
