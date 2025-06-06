@@ -38,8 +38,8 @@ header p {
   font-size: 1.1em;
 }
 
-/* Timeline section styles */
-section {
+/* Timeline .timeline styles */
+.timeline {
   /* Use flexbox to arrange cards in a row */
   display: flex; /* Arrange children in a row */
   flex-direction: row; /* Make sure it's horizontal */
@@ -51,10 +51,9 @@ section {
   scroll-snap-type: x mandatory;
 }
 
-/* Style each card inside the section */
-section > div {
-  /* Set card height to 25% of the viewport height */
-  height: 30vh;
+/* Style each card inside the .timeline */
+.timeline > div {
+  height: auto;
   /* Add space between cards */
   margin-right: 24px;
   /* Add a border and background color */
@@ -76,18 +75,18 @@ section > div {
   overflow: hidden; /* Make sure content like images stays inside the card */
 }
 
-section > div h2 {
+.timeline > div h2 {
   color: var(--intel-blue);
   margin-top: 0;
 }
 
-section > div h3 {
+.timeline > div h3 {
   color: var(--intel-dark-blue);
   margin-bottom: 8px;
 }
 
 /* Make images fit the card width */
-section > div img {
+.timeline > div img {
   width: 100%;
   height: auto;
   border-radius: 4px;
@@ -99,7 +98,7 @@ section > div img {
   object-fit: contain; /* Keeps the whole image visible inside the card */
 }
 
-section > div p {
+.timeline > div p {
   display: flex; /* Use flex to center text */
   align-items: center;
   justify-content: center;
@@ -125,35 +124,47 @@ section > div p {
   transition: opacity 0.5s; /* Smooth fade in/out */
 }
 
-section > div:hover p {
+.timeline > div:hover p {
   opacity: 1; /* Fade in on hover */
   pointer-events: auto;
 }
 
 /* Add a simple hover effect to cards */
-section > div:hover {
+.timeline > div:hover {
   border-color: var(--intel-dark-blue);
   box-shadow: 0 8px 32px rgba(1, 39, 68, 0.788); /* Stronger shadow on hover */
 }
 
 /* Optional: Style the horizontal scrollbar */
-section::-webkit-scrollbar {
+.timeline::-webkit-scrollbar {
   height: 10px;
 }
-section::-webkit-scrollbar-thumb {
+.timeline::-webkit-scrollbar-thumb {
   background: var(--intel-blue);
   border-radius: 5px;
 }
 
+/* Make all links use a dark blue color for better contrast */
+a {
+  color: var(--intel-dark-blue); /* Use Intel's dark blue for links */
+  text-decoration: underline;    /* Underline links for clarity */
+}
+
+/* Change link color on hover for better visibility */
+a:hover, a:focus {
+  color: var(--intel-blue);      /* Use main Intel blue on hover */
+  text-decoration: none;         /* Remove underline on hover */
+}
+
 /* Responsive: Stack cards vertically and allow vertical scroll on small screens */
 @media (max-width: 600px) {
-  section {
+  .timeline {
     flex-direction: column; /* Stack cards vertically */
     overflow-x: hidden;     /* Hide horizontal scroll */
     overflow-y: auto;       /* Enable vertical scroll */
-    height: 80vh;           /* Limit section height so it can scroll */
+    height: 80vh;           /* Limit .timeline height so it can scroll */
   }
-  section > div {
+  .timeline > div {
     width: 90vw;            /* Make cards take most of the screen width */
     height: auto;           /* Let cards grow as needed */
     margin-right: 0;        /* Remove right margin */
